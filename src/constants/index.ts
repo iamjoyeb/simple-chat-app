@@ -7,3 +7,5 @@ export const KeypadValuesDefault = [
 ];
 
 export const CALCULATION_HISTORY_KEY = "calculation-history";
+
+export const AUTH_STORAGE_KEY = "calculator-auth";

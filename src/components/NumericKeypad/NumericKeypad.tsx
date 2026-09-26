@@ -6,7 +6,7 @@ import "./NumericKeypad.css";
 import { INumericKeypadProps } from "./types";
 
 export const NumericKeypad: FC<INumericKeypadProps> = React.memo(
-  ({ handleOnClick, isAllClear = true, operator }) => {
+  ({ handleOnClick, handleOnLongPress, isAllClear = true, operator }) => {
     return (
       <div className="keypad-wrapper">
         {KeypadValuesDefault.flat().map((btn, index) => {
@@ -17,6 +17,11 @@ export const NumericKeypad: FC<INumericKeypadProps> = React.memo(
               onClick={() => {
                 handleOnClick(!isAllClear && btn === "AC" ? "C" : btn);
               }}
+              onLongPress={
+                btn === "H" && handleOnLongPress
+                  ? () => handleOnLongPress(btn)
+                  : undefined
+              }
               isActive={operator === btn}
               className={btn === "0" ? "keypad-button-0" : ""}
             >

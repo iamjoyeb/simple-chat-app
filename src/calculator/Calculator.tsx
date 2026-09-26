@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { CalculationHistory } from "../components/CalculationHistory";
 import { NumericKeypad } from "../components/NumericKeypad";
 import { Screen } from "../components/Screen/Screen";
+import { verifyPin } from "../helpers/auth";
 import { formattedValue } from "../helpers/mix";
 import { useCalculator } from "../hooks/calculator";
 import "./Calculator.css";
 
-export const Calculator = () => {
+export interface ICalculatorProps {
+  onUnlock?: () => void;
+  onRecover?: () => void;
+}
+
+export const Calculator: FC<ICalculatorProps> = ({
+  onUnlock,
+  onRecover,
+}) => {
   const {
     calculationState,
     displayValue,
@@ -28,7 +37,7 @@ export const Calculator = () => {
         clear(key);
         break;
       case "=":
-        inputEqual();
+        handleEqual();
         break;
       case "+":
       case "-":
@@ -50,6 +59,25 @@ export const Calculator = () => {
     }
   };
 
+  const handleEqual = async () => {
+    const { firstOperand, secondOperand, operator } = calculationState;
+
+    if (operator === "" && secondOperand === "") {
+      if (onUnlock && (await verifyPin(firstOperand))) {
+        onUnlock();
+      }
+      return;
+    }
+
+    inputEqual();
+  };
+
+  const onLongPressKeypad = (key: string) => {
+    if (key === "H") {
+      onRecover?.();
+    }
+  };
+
   return (
     <div className="calculator-container">
       <Screen
@@ -58,6 +86,7 @@ export const Calculator = () => {
       />
       <NumericKeypad
         handleOnClick={onClickKeypad}
+        handleOnLongPress={onLongPressKeypad}
         operator={calculationState.operator}
         isAllClear={isAllClear()}
       />

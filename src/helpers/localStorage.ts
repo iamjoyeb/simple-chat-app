@@ -9,5 +9,9 @@ export const getLocalStorage = (key: string) => {
     return null;
   }
 
-  return JSON.parse(itemStr);
+  try {
+    return JSON.parse(itemStr);
+  } catch {
+    return null;
+  }
 };

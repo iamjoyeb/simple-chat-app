@@ -1,0 +1,124 @@
+.onboarding-container {
+  box-sizing: border-box;
+  width: 422px;
+  padding: 32px 28px;
+  background-color: #1f2229;
+  border: 1px solid var(--grey-primary);
+  border-radius: 10px;
+  text-align: center;
+  color: #eceff1;
+}
+
+.onboarding-title {
+  color: var(--orange-primary);
+  font-size: 26px;
+  margin: 0 0 8px;
+}
+
+.onboarding-subtitle {
+  color: var(--blue-grey-light);
+  font-size: 15px;
+  line-height: 1.4;
+  margin: 0 0 24px;
+}
+
+.onboarding-input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 28px;
+  text-align: center;
+  letter-spacing: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--grey-primary);
+  background-color: #282c34;
+  color: white;
+  outline: none;
+}
+
+.onboarding-input:focus {
+  border-color: var(--orange-primary);
+}
+
+.onboarding-error {
+  color: #ef5350;
+  font-size: 14px;
+  min-height: 18px;
+  margin: 10px 0 0;
+}
+
+.onboarding-button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--orange-primary);
+  color: white;
+}
+
+.onboarding-button:hover {
+  background-color: var(--orange-light);
+}
+
+.onboarding-button:disabled {
+  background-color: var(--grey-primary);
+  color: var(--grey-light);
+  cursor: not-allowed;
+}
+
+.onboarding-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.onboarding-actions button {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--grey-primary);
+  color: white;
+}
+
+.onboarding-actions button:hover {
+  background-color: var(--grey-light);
+}
+
+.onboarding-recovery-key {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  font-size: 24px;
+  letter-spacing: 3px;
+  background-color: #282c34;
+  border: 1px dashed var(--orange-primary);
+  color: var(--orange-light);
+  border-radius: 8px;
+  padding: 16px 8px;
+  margin: 0 0 4px;
+  user-select: all;
+}
+
+.onboarding-save {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.onboarding-hint {
+  color: var(--blue-grey-light);
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 18px 0 0;
+}

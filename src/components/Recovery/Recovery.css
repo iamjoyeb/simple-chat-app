@@ -1,0 +1,104 @@
+.recovery-container {
+  box-sizing: border-box;
+  width: 422px;
+  padding: 32px 28px;
+  background-color: #1f2229;
+  border: 1px solid var(--grey-primary);
+  border-radius: 10px;
+  text-align: center;
+  color: #eceff1;
+}
+
+.recovery-title {
+  color: var(--orange-primary);
+  font-size: 26px;
+  margin: 0 0 8px;
+}
+
+.recovery-subtitle {
+  color: var(--blue-grey-light);
+  font-size: 15px;
+  line-height: 1.4;
+  margin: 0 0 24px;
+}
+
+.recovery-input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 28px;
+  text-align: center;
+  letter-spacing: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--grey-primary);
+  background-color: #282c34;
+  color: white;
+  outline: none;
+}
+
+.recovery-input:focus,
+.recovery-key-input:focus {
+  border-color: var(--orange-primary);
+}
+
+.recovery-key-input {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--grey-primary);
+  background-color: #282c34;
+  color: white;
+  outline: none;
+}
+
+.recovery-error {
+  color: #ef5350;
+  font-size: 14px;
+  min-height: 18px;
+  margin: 10px 0 0;
+}
+
+.recovery-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.recovery-actions button {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--grey-primary);
+  color: white;
+}
+
+.recovery-actions button:hover {
+  background-color: var(--grey-light);
+}
+
+.recovery-actions button.recovery-primary {
+  background-color: var(--orange-primary);
+  color: white;
+}
+
+.recovery-actions button.recovery-primary:hover {
+  background-color: var(--orange-light);
+}
+
+.recovery-actions button:disabled,
+.recovery-actions button.recovery-primary:disabled {
+  background-color: var(--grey-primary);
+  color: var(--grey-light);
+  cursor: not-allowed;
+}
